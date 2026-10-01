@@ -1,4 +1,4 @@
-import GooeyNav from './components/GooeyNav/GooeyNav'
+import HoldButton from './components/HoldButton/HoldButton';
 
 const items = [
   { label: "Casa", href: "#" },
@@ -15,18 +15,26 @@ alignItems: 'center',
 height: '100vh'
 }}>
 
-<div style={{ height: '600px', position: 'relative' }}>
-  <GooeyNav
-    items={items}
-    particleCount={15}
-    particleDistances={[90, 10]}
-    particleR={100}
-    initialActiveIndex={0}
-    animationTime={600}
-    timeVariance={300}
-    colors={[1, 2, 3, 1, 2, 3, 1, 4]}
-  />
-</div>
+<HoldButton
+  doneLabel="Deleted"
+  backgroundColor="#27272a"
+  fillColor="#5227FF"
+  textColor="#f5f5f5"
+  fillTextColor="#ffffff"
+  size="md"
+  radius={14}
+  fillDirection="right"
+  holdTime={2000}
+  releaseTime={200}
+  pressScale={0.97}
+  wave
+  waveAmplitude={6}
+  glow
+  resetAfter={1200}
+  onHold={() => console.log('confirmed')}
+>
+  Hold to delete
+</HoldButton>
 </div>
 )
 }
